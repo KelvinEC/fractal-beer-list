@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lZx-Us-CPK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Beers List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="BLBeersListViewController_ID" id="BYZ-38-t0r" customClass="BLBeersListViewController" customModule="beerlist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jlg-hw-Rwt">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="s5X-Rz-LCC"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g7x-zA-bi8">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jlg-hw-Rwt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CBr-ne-pUp"/>
+                            <constraint firstItem="g7x-zA-bi8" firstAttribute="top" secondItem="jlg-hw-Rwt" secondAttribute="bottom" id="LXi-zV-R19"/>
+                            <constraint firstItem="jlg-hw-Rwt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VIH-rY-ee0"/>
+                            <constraint firstItem="g7x-zA-bi8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hI5-c9-RCW"/>
+                            <constraint firstItem="g7x-zA-bi8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="iRe-8F-OfQ"/>
+                            <constraint firstItem="g7x-zA-bi8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jyV-kz-v5X"/>
+                            <constraint firstItem="jlg-hw-Rwt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tIk-aP-KdH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="f70-Cp-E28"/>
+                    <connections>
+                        <outlet property="beersTableView" destination="g7x-zA-bi8" id="TN8-fO-y2u"/>
+                        <outlet property="searchBar" destination="jlg-hw-Rwt" id="BFY-so-0ST"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="455.19999999999999" y="118.29085457271366"/>
+        </scene>
+        <!--Beer Details View Controller-->
+        <scene sceneID="zTW-AK-spN">
+            <objects>
+                <viewController storyboardIdentifier="BLBeerDetailsViewController_ID" id="JMu-Ib-zQ0" customClass="BLBeerDetailsViewController" customModule="beerlist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xD1-Kt-yz7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zpy-vI-mC9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QaI-kg-PUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1190" y="118"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xr8-d8-rUh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lZx-Us-CPK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CpR-Fp-lwO">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vg6-J7-ggo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xMO-Qk-krj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-306" y="118"/>
+        </scene>
+    </scenes>
+</document>
